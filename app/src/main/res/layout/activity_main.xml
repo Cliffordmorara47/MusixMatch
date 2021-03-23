@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,4 +13,44 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/headphones"/>
+
+    <TextView
+        android:text="MusixMatch"
+        android:id="@+id/appNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <TextView
+        android:text="Build your songs with great lyrics view"
+        android:id="@+id/appDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appNameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <Button
+        android:text="Explore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:id="@+id/findRestaurantsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:textColor="@color/colorTextIcons"/>
 </RelativeLayout>
