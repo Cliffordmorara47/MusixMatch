@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/headphones"/>
+        android:src="@drawable/music"/>
 
     <TextView
         android:text="MusixMatch"
@@ -29,7 +29,6 @@
         app:fontFamily="cursive" />
 
     <TextView
-        android:text="Build your songs with great lyrics view"
         android:id="@+id/appDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,20 +36,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
+        android:text="Build your songs with great lyrics view"
         android:textColor="@color/colorTextIcons"
-        android:textSize="25sp"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:fontFamily="cursive" />
+        app:fontFamily="monospace" />
 
     <Button
-        android:text="Explore"
+        android:id="@+id/findRestaurantsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
-        android:id="@+id/findRestaurantsButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/transparent"
-        android:textColor="@color/colorTextIcons"/>
+        android:fontFamily="cursive"
+        android:text="Explore"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/black" />
 </RelativeLayout>
