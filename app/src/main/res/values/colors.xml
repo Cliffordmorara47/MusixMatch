@@ -15,5 +15,5 @@
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#727272</color>
     <color name="colorDivider">#B6B6B6</color>
-    <color name="transparent">transparent</color>
+    <color name="transparent">#00000000</color>
 </resources>
