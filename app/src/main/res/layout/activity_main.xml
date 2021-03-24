@@ -44,7 +44,7 @@
         app:fontFamily="monospace" />
 
     <Button
-        android:id="@+id/findRestaurantsButton"
+        android:id="@+id/exploreButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
