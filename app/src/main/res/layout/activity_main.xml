@@ -17,6 +17,7 @@
     <TextView
         android:text="MusixMatch"
         android:id="@+id/appNameTextView"
+        android:paddingTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -36,7 +37,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:text="Build your songs with great lyrics view"
+        android:text="@string/description"
         android:textColor="@color/colorTextIcons"
         android:textSize="15sp"
         android:textStyle="bold"
