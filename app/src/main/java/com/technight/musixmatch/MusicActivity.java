@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,7 +18,7 @@ public class MusicActivity extends AppCompatActivity {
     public static final String TAG = MusicActivity.class.getSimpleName();
     @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.lyricsTextView) TextView mLyricsTextView;
-    @BindView(R.id.lv) TextView mLv;
+//    @BindView(R.id.lv) TextView mLv;
 
     private String[] songs = new String[] {"Memories", "Quite Miss Home", "Sweet but Psycho", "You are the Reason",
             "EastSide", "TapOut", "Sex Sounds", "Back Door", "7 Summers", "Think about things", "Good News",
@@ -34,11 +35,16 @@ public class MusicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+
         ButterKnife.bind(this);
         mLyricsTextView = (TextView) findViewById(R.id.lyricsTextView);
 
-        MusicListArrayAdapter musicListArrayAdapter = new MusicListArrayAdapter(this, android.R.layout.simple_gallery_item, songs, artists);
+        MusicListArrayAdapter musicListArrayAdapter = new MusicListArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, songs, artists);
         mListView.setAdapter(musicListArrayAdapter);
+
+        Intent intent = getIntent();
+        mLyricsTextView.setText("Here Are Some of the Top Songs In Our Billboard: ");
+        Log.d(TAG, "In the onCreate method");
     }
 
 
