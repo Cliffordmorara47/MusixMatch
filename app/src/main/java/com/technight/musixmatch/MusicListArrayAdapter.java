@@ -6,12 +6,12 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class MusicListAdapter extends ArrayAdapter {
+public class MusicListArrayAdapter extends ArrayAdapter {
     private Context mContext;
     private String[] mSongs;
     private String[] mArtists;
 
-    public MusicListAdapter(Context context, int resource, String[] mSongs, String[] mArtists) {
+    public MusicListArrayAdapter(Context context, int resource, String[] mSongs, String[] mArtists) {
         super(context, resource);
         this.mContext = context;
         this.mSongs = mSongs;

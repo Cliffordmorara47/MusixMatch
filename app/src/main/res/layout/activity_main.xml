@@ -12,12 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/music"/>
+        android:src="@drawable/cool"/>
 
     <TextView
         android:text="MusixMatch"
         android:id="@+id/appNameTextView"
-        android:paddingTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -43,17 +42,145 @@
         android:textStyle="bold"
         app:fontFamily="monospace" />
 
+    <TextView
+        android:text="Gospel"
+        android:id="@+id/Gospel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appDescription"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <TextView
+        android:text="Jazz"
+        android:id="@+id/jazz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appDescription"
+        android:gravity="right"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <TextView
+        android:text="HipHop"
+        android:id="@+id/hipHop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appDescription"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/teal_200"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive"
+        android:paddingTop="20sp"/>
+
+    <TextView
+        android:text="Reggae"
+        android:id="@+id/reggae"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hipHop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/teal_200"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive"
+        android:paddingTop="15sp"/>
+
+    <TextView
+        android:text="Rock"
+        android:id="@+id/rock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reggae"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <TextView
+        android:text="Pop"
+        android:id="@+id/pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reggae"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/teal_200"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive"
+        android:paddingTop="15sp"/>
+
+    <TextView
+        android:text="Rhythms"
+        android:id="@+id/rhythms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reggae"
+        android:gravity="right"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <TextView
+        android:text="Country Music"
+        android:id="@+id/countryMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pop"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="cursive"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive"
+        android:paddingTop="35sp"/>
+
+    <TextView
+        android:text="...and many other Great Collections"
+        android:id="@+id/collections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/countryMusic"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="cursive"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive"
+        android:paddingTop="60dp" />
+
     <Button
         android:id="@+id/exploreButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/transparent"
+        android:background="@color/black"
         android:fontFamily="cursive"
         android:text="Explore"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/teal_200"
         android:textSize="30sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/black" />
+        android:textStyle="bold"/>
 </RelativeLayout>

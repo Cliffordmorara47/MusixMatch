@@ -2,11 +2,14 @@ package com.technight.musixmatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -33,6 +36,9 @@ public class MusicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_music);
         ButterKnife.bind(this);
         mLyricsTextView = (TextView) findViewById(R.id.lyricsTextView);
+
+        MusicListArrayAdapter musicListArrayAdapter = new MusicListArrayAdapter(this, android.R.layout.simple_gallery_item, songs, artists);
+        mListView.setAdapter(musicListArrayAdapter);
     }
 
 
