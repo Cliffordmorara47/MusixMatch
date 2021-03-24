@@ -1,4 +1,4 @@
 package com.technight.musixmatch;
 
-public class Music {
+public class MusicListAdapter {
 }
