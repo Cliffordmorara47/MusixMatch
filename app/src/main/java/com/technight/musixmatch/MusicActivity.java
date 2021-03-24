@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,9 +43,13 @@ public class MusicActivity extends AppCompatActivity {
         MusicListArrayAdapter musicListArrayAdapter = new MusicListArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, songs, artists);
         mListView.setAdapter(musicListArrayAdapter);
 
-        Intent intent = getIntent();
-        mLyricsTextView.setText("Here Are Some of the Top Songs In Our Billboard: ");
-        Log.d(TAG, "In the onCreate method");
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String artist = ((TextView)view).getText().toString();
+                Toast.makeText(MusicActivity.this, artist, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 
