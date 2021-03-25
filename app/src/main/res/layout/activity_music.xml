@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/headphones"/>-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/earphones"
+        android:verticalScrollbarPosition="right"
+        android:visibility="visible" />
 
 
     <TextView
@@ -25,13 +27,20 @@
         android:textStyle="bold"/>
 
     <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView"
         android:layout_below="@+id/lyricsTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_alignParentBottom="false"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:fadeScrollbars="true"
+        android:fastScrollAlwaysVisible="true"
+        android:footerDividersEnabled="true"
+        android:longClickable="false"
+        android:nestedScrollingEnabled="false"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false" />
 
 
 </RelativeLayout>

@@ -22,7 +22,7 @@ public class MusicListArrayAdapter extends ArrayAdapter {
     public Object getItem(int position) {
         String song = mSongs[position];
         String artist = mArtists[position];
-        return String.format("%s \n --- %s", song, artist);
+        return String.format("%s \n %s", song, artist);
     }
 
     @Override
