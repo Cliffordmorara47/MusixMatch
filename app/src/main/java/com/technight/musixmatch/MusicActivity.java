@@ -40,7 +40,7 @@ public class MusicActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mLyricsTextView = (TextView) findViewById(R.id.lyricsTextView);
 
-        MusicListArrayAdapter musicListArrayAdapter = new MusicListArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, songs, artists);
+        MusicListArrayAdapter musicListArrayAdapter = new MusicListArrayAdapter(this, android.R.layout.simple_list_item_1, songs, artists);
         mListView.setAdapter(musicListArrayAdapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
