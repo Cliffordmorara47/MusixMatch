@@ -40,7 +40,7 @@
         android:longClickable="false"
         android:nestedScrollingEnabled="false"
         android:scrollbarAlwaysDrawHorizontalTrack="false"
-        android:scrollbarAlwaysDrawVerticalTrack="false" />
+        android:scrollbarAlwaysDrawVerticalTrack="false"/>
 
 
 </RelativeLayout>
