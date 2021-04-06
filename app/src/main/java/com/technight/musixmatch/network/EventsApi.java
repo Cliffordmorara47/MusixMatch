@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface EventsApi {
-    @GET("/events")
+    @GET("events")
     Call<YelpEventsHandler> getEvents(
             @Query("location") String location
     );

@@ -26,7 +26,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EventsListActivity extends AppCompatActivity {
-    public static final String TAG = EventsListActivity.class.getSimpleName();
+    public static final String TAG = "Events";
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
     @BindView(R.id.errorTextView) TextView errorTextView;
     @BindView(R.id.progressBar) ProgressBar progressBar;
@@ -44,7 +44,7 @@ public class EventsListActivity extends AppCompatActivity {
         String location = intent.getStringExtra("location");
 
         EventsApi client = EventsClient.getClient();
-        Call<YelpEventsHandler> call = client.getEvents(location);
+        Call<YelpEventsHandler> call = client.getEvents("usa");
 
         call.enqueue(new Callback<YelpEventsHandler>() {
             @Override

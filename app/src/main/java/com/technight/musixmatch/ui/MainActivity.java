@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = "MeetUp";
     @BindView(R.id.location) EditText mLocation;
     @BindView(R.id.searchEventButton) Button searchEventButton;
 

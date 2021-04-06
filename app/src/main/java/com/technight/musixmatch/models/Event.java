@@ -5,7 +5,12 @@ package com.technight.musixmatch.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-//@Generated("jsonschema2pojo")
+import org.parceler.Parcel;
+
+import javax.annotation.processing.Generated;
+
+@Generated("jsonschema2pojo")
+//@Parcel
 public class Event {
 
     @SerializedName("attending_count")

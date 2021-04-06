@@ -1,12 +1,18 @@
 
 package com.technight.musixmatch.models;
 
+import androidx.annotation.NonNull;
+
 import java.util.List;
-//import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+import javax.annotation.processing.Generated;
+
 //@Generated("jsonschema2pojo")
+@Parcel
 public class Location {
 
     @SerializedName("address1")
@@ -139,6 +145,12 @@ public class Location {
 
     public void setCrossStreets(String crossStreets) {
         this.crossStreets = crossStreets;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s, %s", this.address1, this.city, this.country, this.zipCode);
     }
 
 }
