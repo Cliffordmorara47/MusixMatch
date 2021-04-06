@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/eventImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        android:background="#ECE6E6"
+        android:cropToPadding="true"
+        android:rotation="0"
+        android:rotationX="20"
+        android:rotationY="29"
+        android:scaleType="centerInside"
+        android:src="@drawable/cool" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/eventNameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Event Name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="italic|bold"/>
+
+        <TextView
+            android:id="@+id/eventCategoryView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Category"
+            android:textColor="#00BCD4"
+            android:textStyle="italic" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/eventCostView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Cost"
+                android:paddingRight="30dp"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

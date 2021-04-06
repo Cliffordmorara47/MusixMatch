@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context="com.technight.musixmatch.MainActivity">
+    tools:context="com.technight.musixmatch.ui.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,7 +15,7 @@
         android:src="@drawable/cool"/>
 
     <TextView
-        android:text="MusixMatch"
+        android:text="EventsFinder"
         android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         app:fontFamily="monospace" />
 
     <TextView
-        android:text="Gospel"
+        android:text="Music"
         android:id="@+id/Gospel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
         app:fontFamily="cursive" />
 
     <TextView
-        android:text="Jazz"
+        android:text="Visual Arts"
         android:id="@+id/jazz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         app:fontFamily="cursive" />
 
     <TextView
-        android:text="HipHop"
+        android:text="Lectures $ Books"
         android:id="@+id/hipHop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
         android:paddingTop="20sp"/>
 
     <TextView
-        android:text="Reggae"
+        android:text="Film"
         android:id="@+id/reggae"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
         android:paddingTop="15sp"/>
 
     <TextView
-        android:text="Rock"
+        android:text="Fashion"
         android:id="@+id/rock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
         app:fontFamily="cursive" />
 
     <TextView
-        android:text="Pop"
+        android:text="Festivals-fairs"
         android:id="@+id/pop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
         android:paddingTop="15sp"/>
 
     <TextView
-        android:text="Rhythms"
+        android:text="Charities"
         android:id="@+id/rhythms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
         app:fontFamily="cursive" />
 
     <TextView
-        android:text="Country Music"
+        android:text="NightLife"
         android:id="@+id/countryMusic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
         android:paddingTop="35sp"/>
 
     <TextView
-        android:text="...and many other Great Collections"
+        android:text="...and many other Great Events"
         android:id="@+id/collections"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -172,16 +172,29 @@
         android:paddingTop="60dp" />
 
     <Button
-        android:id="@+id/exploreButton"
+        android:id="@+id/searchEventButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/black"
         android:fontFamily="cursive"
-        android:text="Explore"
+        android:text="Search Events"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:backgroundTint="@color/teal_200"/>
+        android:backgroundTint="@color/teal_700"/>
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/searchEventButton"
+        android:layout_centerHorizontal="true"
+        android:background="@color/cardview_dark_background"
+        android:fontFamily="monospace"
+        android:hint="Enter Location"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
 </RelativeLayout>
