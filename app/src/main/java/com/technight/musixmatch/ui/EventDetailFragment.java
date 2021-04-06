@@ -1,5 +1,7 @@
 package com.technight.musixmatch.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,7 +26,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class EventDetailFragment extends Fragment {
+public class EventDetailFragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.eventImageView) ImageView eventImage;
     @BindView(R.id.eventNameView) TextView eventName;
     @BindView(R.id.eventCostView) TextView eventCost;
@@ -69,7 +71,22 @@ public class EventDetailFragment extends Fragment {
         eventAddress.setText(event.getLocation().toString());
         eventInfo.setText(event.getEventSiteUrl());
         eventDetail.setText(event.getAttendingCount());
+        eventInfo.setOnClickListener(this);
         return view;
     }
 
+    @Override
+    public void onClick(View view) {
+        if (view == eventInfo) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW);
+        }
+
+        if (view == eventAddress) {
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("geo:" + event.getLongitude()
+                            + "," + event.getLatitude()
+                            + "?q=(" + event.getName() + ")"));
+            startActivity(mapIntent);
+        }
     }
+}
