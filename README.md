@@ -2,7 +2,7 @@
 Is an android based app that displays various songs lyrics.
 
 ## Application HomePage
-![HomePage](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/home_page.png?raw=true)
+![HomePage](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/screenshot.png?raw=true)
 ---
 ## Table of contents
 - [Project description](#project-description)
@@ -12,12 +12,12 @@ Is an android based app that displays various songs lyrics.
 - [Contact](#contact)
 
 ## Behaviour driven development
-- From the homepage, a user can click on the explore button to view top songs in our list.
-- User can be able to search for a particular song's lyrics.
+- From the homepage, a user Can click on the search Events Button to View the Events within that Area
+- User can be able to search for Events Near Him/Her
 
 ---
 ## Project description
-MusixMatch is an app where by the user can be able to view top songs in our billboard and request for the song's lyrics.
+MusixMatch is an app where by the user can be able to search events within a specified area.
 
 ---
 ## Technologies
