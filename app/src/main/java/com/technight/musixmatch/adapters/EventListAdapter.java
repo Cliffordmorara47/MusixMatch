@@ -1,0 +1,67 @@
+package com.technight.musixmatch.adapters;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
+import com.technight.musixmatch.R;
+import com.technight.musixmatch.models.Event;
+
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.EventViewHolder> {
+    private List<Event> mEvents;
+    private Context mContext;
+
+    public EventListAdapter(Context context, List<Event> events) {
+        mContext = context;
+        mEvents = events;
+    }
+
+    @Override
+    public EventListAdapter.EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.events_list, parent, false);
+        EventViewHolder eventViewHolder = new EventViewHolder(view);
+        return eventViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(EventListAdapter.EventViewHolder holder, int position) {
+        holder.bindEvent(mEvents.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return mEvents.size();
+    }
+
+    public class EventViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.eventImageView) ImageView eventImageView;
+        @BindView(R.id.eventNameView) TextView eventNameView;
+        @BindView(R.id.eventCategoryView) TextView eventCategory;
+        @BindView(R.id.eventCostView) TextView eventCostView;
+        private Context mContext;
+
+        public EventViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+            mContext = itemView.getContext();
+        }
+
+        public void bindEvent(Event event) {
+            eventNameView.setText(event.getName());
+            eventCategory.setText(event.getCategory());
+            eventCostView.setText("Cost: " + event.getCost());
+            Picasso.get().load(event.getImageUrl()).into(eventImageView);
+        }
+    }
+}
