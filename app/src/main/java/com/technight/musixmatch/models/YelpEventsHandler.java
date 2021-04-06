@@ -6,8 +6,10 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-//@Generated("jsonschema2pojo")
-public class YelpEventsHandler {
+import javax.annotation.processing.Generated;
+
+@Generated("jsonschema2pojo")
+public class YelpEventsSearchResponse {
 
     @SerializedName("total")
     @Expose
@@ -20,7 +22,7 @@ public class YelpEventsHandler {
      * No args constructor for use in serialization
      * 
      */
-    public YelpEventsHandler() {
+    public YelpEventsSearchResponse() {
     }
 
     /**
@@ -28,7 +30,7 @@ public class YelpEventsHandler {
      * @param total
      * @param events
      */
-    public YelpEventsHandler(Integer total, List<Event> events) {
+    public YelpEventsSearchResponse(Integer total, List<Event> events) {
         super();
         this.total = total;
         this.events = events;
