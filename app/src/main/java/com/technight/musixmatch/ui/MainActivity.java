@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = "MeetUp";
     @BindView(R.id.location) EditText mLocation;
     @BindView(R.id.searchEventButton) Button searchEventButton;
 
@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         searchEventButton.setOnClickListener(this);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.options_menu, menu);
-//
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+        return true;
+    }
 
     @Override
     public void onClick(View view) {

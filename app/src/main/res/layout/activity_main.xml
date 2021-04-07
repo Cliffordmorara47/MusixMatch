@@ -15,7 +15,7 @@
         android:src="@drawable/cool"/>
 
     <TextView
-        android:text="EventsFinder"
+        android:text="Events Finder"
         android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
         android:textColor="@color/colorTextIcons"
-        android:textSize="50sp"
+        android:textSize="55sp"
         android:textStyle="bold"
         app:fontFamily="cursive" />
 
