@@ -10,11 +10,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
 import com.technight.musixmatch.R;
 import com.technight.musixmatch.models.Event;
 import com.technight.musixmatch.ui.EventDetailActivity;
-import com.technight.musixmatch.ui.EventsListActivity;
 
 import org.parceler.Parcels;
 
@@ -54,6 +52,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         @BindView(R.id.eventNameView) TextView eventNameView;
         @BindView(R.id.eventCategoryView) TextView eventCategory;
         @BindView(R.id.eventCostView) TextView eventCostView;
+        @BindView(R.id.eventAttendingView) TextView eventAttendingView;
         private Context mContext;
 
         public EventViewHolder(View itemView) {
@@ -64,10 +63,12 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         }
 
         public void bindEvent(Event event) {
-            Picasso.get().load(event.getImageUrl()).into(eventImageView);
+//            Picasso.get().load(event.getImageUrl()).into(eventImageView);
             eventNameView.setText(event.getName());
-            eventCategory.setText(event.getCategory());
+            eventCategory.setText("Category: " +event.getCategory());
             eventCostView.setText("Cost: " + event.getCost());
+            eventAttendingView.setText("Attending: " + event.getAttendingCount());
+
         }
 
         @Override

@@ -2,14 +2,16 @@
 package com.technight.musixmatch.models;
 
 import java.util.List;
+//import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Generated;
 import org.parceler.Parcel;
 
+
 @Generated("jsonschema2pojo")
-public class YelpEventsHandler {
+public class EventsHandler {
 
     @SerializedName("total")
     @Expose
@@ -22,7 +24,7 @@ public class YelpEventsHandler {
      * No args constructor for use in serialization
      * 
      */
-    public YelpEventsHandler() {
+    public EventsHandler() {
     }
 
     /**
@@ -30,7 +32,7 @@ public class YelpEventsHandler {
      * @param total
      * @param events
      */
-    public YelpEventsHandler(Integer total, List<Event> events) {
+    public EventsHandler(Integer total, List<Event> events) {
         super();
         this.total = total;
         this.events = events;

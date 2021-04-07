@@ -1,5 +1,7 @@
 package com.technight.musixmatch.adapters;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -20,13 +22,13 @@ public class EventPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int position) {
-        return EventDetailFragment.newInstance(events.get(position));
+    public int getCount() {
+        return events.size();
     }
 
     @Override
-    public int getCount() {
-        return events.size();
+    public Fragment getItem(int position) {
+        return EventDetailFragment.newInstance(events.get(position));
     }
 
     @Override

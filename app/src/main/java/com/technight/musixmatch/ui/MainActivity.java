@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         searchEventButton.setOnClickListener(this);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.options_menu, menu);
-//
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+        return true;
+    }
 
     @Override
     public void onClick(View view) {

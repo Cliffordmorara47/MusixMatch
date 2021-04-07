@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.technight.musixmatch.R;
 import com.technight.musixmatch.adapters.EventListAdapter;
 import com.technight.musixmatch.models.Event;
-import com.technight.musixmatch.models.YelpEventsHandler;
+import com.technight.musixmatch.models.EventsHandler;
 import com.technight.musixmatch.network.EventsApi;
 import com.technight.musixmatch.network.EventsClient;
 
@@ -44,11 +44,11 @@ public class EventsListActivity extends AppCompatActivity {
         String location = intent.getStringExtra("location");
 
         EventsApi client = EventsClient.getClient();
-        Call<YelpEventsHandler> call = client.getEvents("usa");
+        Call<EventsHandler> call = client.getEvents(location);
 
-        call.enqueue(new Callback<YelpEventsHandler>() {
+        call.enqueue(new Callback<EventsHandler>() {
             @Override
-            public void onResponse(retrofit2.Call<YelpEventsHandler> call, Response<YelpEventsHandler> response) {
+            public void onResponse(retrofit2.Call<EventsHandler> call, Response<EventsHandler> response) {
                 hideProgressBar();
 
                 if (response.isSuccessful()) {
@@ -66,7 +66,7 @@ public class EventsListActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(retrofit2.Call<YelpEventsHandler> call, Throwable t) {
+            public void onFailure(retrofit2.Call<EventsHandler> call, Throwable t) {
                 hideProgressBar();
                 showFailureMessage();
             }

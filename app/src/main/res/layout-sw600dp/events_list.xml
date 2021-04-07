@@ -4,7 +4,6 @@
     android:layout_height="250dp"
     android:background="@drawable/earphones"
     android:backgroundTint="#B8ABAB"
-    android:clipToPadding="true"
     android:orientation="horizontal"
     android:paddingBottom="10dp">
 
@@ -49,7 +48,7 @@
             android:paddingBottom="10dp"
             android:text="Event Category"
             android:textAlignment="textStart"
-            android:textColor="@color/teal_700"
+            android:textColor="#00BCD4"
             android:textSize="11dp"
             android:textStyle="italic|bold" />
 
@@ -61,7 +60,7 @@
             android:paddingBottom="40dp"
             android:text="12"
             android:textAlignment="textStart"
-            android:textColor="@color/teal_700"
+            android:textColor="#00BCD4"
             android:textSize="11dp"
             android:textStyle="italic|bold" />
 

@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.os.Parcel;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +18,6 @@ import com.technight.musixmatch.R;
 import com.technight.musixmatch.models.Event;
 
 import org.parceler.Parcels;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

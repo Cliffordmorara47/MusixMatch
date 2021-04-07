@@ -1,16 +1,14 @@
 
 package com.technight.musixmatch.models;
 
-//import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Generated;
 import org.parceler.Parcel;
 
-import javax.annotation.processing.Generated;
-
+@Parcel
 @Generated("jsonschema2pojo")
-//@Parcel
 public class Event {
 
     @SerializedName("attending_count")
@@ -21,10 +19,10 @@ public class Event {
     private String category;
     @SerializedName("cost")
     @Expose
-    private Object cost;
+    private String cost;
     @SerializedName("cost_max")
     @Expose
-    private Object costMax;
+    private String costMax;
     @SerializedName("description")
     @Expose
     private String description;
@@ -104,7 +102,7 @@ public class Event {
      * @param category
      * @param longitude
      */
-    public Event(Integer attendingCount, String category, Object cost, Object costMax, String description, String eventSiteUrl, String id, String imageUrl, Integer interestedCount, Boolean isCanceled, Boolean isFree, Boolean isOfficial, Double latitude, Double longitude, String name, String ticketsUrl, String timeEnd, String timeStart, Location location, String businessId) {
+    public Event(Integer attendingCount, String category, String cost, String costMax, String description, String eventSiteUrl, String id, String imageUrl, Integer interestedCount, Boolean isCanceled, Boolean isFree, Boolean isOfficial, Double latitude, Double longitude, String name, String ticketsUrl, String timeEnd, String timeStart, Location location, String businessId) {
         super();
         this.attendingCount = attendingCount;
         this.category = category;
@@ -144,19 +142,19 @@ public class Event {
         this.category = category;
     }
 
-    public Object getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(Object cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
-    public Object getCostMax() {
+    public String getCostMax() {
         return costMax;
     }
 
-    public void setCostMax(Object costMax) {
+    public void setCostMax(String costMax) {
         this.costMax = costMax;
     }
 
