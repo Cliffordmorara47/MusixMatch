@@ -6,12 +6,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.technight.musixmatch.Constants;
 import com.technight.musixmatch.R;
 
@@ -22,8 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = "MeetUp";
     @BindView(R.id.location) EditText userLocation;
     @BindView(R.id.searchEventButton) Button searchEventButton;
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
+    private DatabaseReference locationReference;
+
+    private String userAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +38,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = sharedPreferences.edit();
+        locationReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.USER_LOCATION_KEY);
+
+        locationReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot locationSnapShot : dataSnapshot.getChildren()) {
+                    String location = locationSnapShot.getValue().toString();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
         searchEventButton.setOnClickListener(this);
     }
 
@@ -40,21 +64,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
-
         return true;
     }
 
-    private void addLocationToPreferences(String location) {
-        editor.putString(Constants.USER_LOCATION_KEY, location).apply();
+    private void saveLocationToDatabase(String location) {
+        locationReference.push().setValue(location);
     }
 
     @Override
     public void onClick(View view) {
         if (view == searchEventButton) {
             String location = userLocation.getText().toString();
+            saveLocationToDatabase(location);
             Intent intent = new Intent(MainActivity.this, EventsListActivity.class);
             intent.putExtra("location", location);
-            addLocationToPreferences(location);
             startActivity(intent);
         }
     }
