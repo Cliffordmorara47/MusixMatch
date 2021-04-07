@@ -60,9 +60,13 @@ public class EventsListActivity extends AppCompatActivity {
                     recyclerView.setHasFixedSize(true);
 
                     showEvents();
+                    if (events == null) {
+                        showNoEventsMessage();
+                    }
                 } else {
                     showUnsuccessfulMessage();
                 }
+
             }
 
             @Override
@@ -72,6 +76,11 @@ public class EventsListActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void showNoEventsMessage() {
+        errorTextView.setText("Their are Currently \n No Events Within This Area");
+    }
+
     private void showFailureMessage() {
         errorTextView.setText("Oops, Your Data is Turned Off");
         errorTextView.setVisibility(View.VISIBLE);
