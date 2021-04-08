@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.location) EditText userLocation;
     @BindView(R.id.searchEventButton) Button searchEventButton;
     private DatabaseReference locationReference;
+    private ValueEventListener locationReferenceListener;
 
     private String userAddress;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .getReference()
                 .child(Constants.USER_LOCATION_KEY);
 
-        locationReference.addValueEventListener(new ValueEventListener() {
+         locationReferenceListener = locationReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot locationSnapShot : dataSnapshot.getChildren()) {
@@ -80,5 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("location", location);
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        locationReference.removeEventListener(locationReferenceListener);
     }
 }
