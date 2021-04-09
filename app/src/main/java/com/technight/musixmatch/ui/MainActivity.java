@@ -12,6 +12,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = "MeetUp";
     @BindView(R.id.location) EditText userLocation;
     @BindView(R.id.searchEventButton) Button searchEventButton;
+    @BindView(R.id.bookMarkIcon) TextView bookMarkIcon;
     private DatabaseReference locationReference;
     private ValueEventListener locationReferenceListener;
 
@@ -59,6 +62,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         searchEventButton.setOnClickListener(this);
+        bookMarkIcon.setOnClickListener(this);
+
+        bookMarkIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BookmarkedEventsList.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
