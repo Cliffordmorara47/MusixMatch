@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "595017648179",
+    "project_id": "musixmatch-309406",
+    "storage_bucket": "musixmatch-309406.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595017648179:android:7d26608b4167cdf815bb46",
+        "android_client_info": {
+          "package_name": "com.technight.musixmatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595017648179-ikevnsr1l2bnqi56vop6fs93emkb84ps.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.technight.musixmatch",
+            "certificate_hash": "76abcd9ad56cf0b7381cd81fac2643e75923c91e"
+          }
+        },
+        {
+          "client_id": "595017648179-8cr3k1qsatlbk3die99re4f2h88uf9mt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd0D6R6mkDlsNGM8x7JYk_e2HAupEqbDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595017648179-8cr3k1qsatlbk3die99re4f2h88uf9mt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

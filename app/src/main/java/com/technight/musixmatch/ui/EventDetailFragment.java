@@ -12,8 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+import com.technight.musixmatch.Constants;
 import com.technight.musixmatch.R;
 import com.technight.musixmatch.models.Event;
 
@@ -30,7 +34,7 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
     @BindView(R.id.eventDetail) TextView eventDetail;
     @BindView(R.id.eventInfo) TextView eventInfo;
     @BindView(R.id.eventAddress) TextView eventAddress;
-    @BindView(R.id.bookmarkEventButton) TextView bookmarkEvent;
+    @BindView(R.id.bookmarkEventButton) TextView bookmarkEventButton;
     @BindView(R.id.eventDescription) TextView eventDescription;
 
     private Event event;
@@ -68,6 +72,8 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
         eventInfo.setText(event.getEventSiteUrl());
         eventDetail.setText(event.getAttendingCount());
         eventInfo.setOnClickListener(this);
+
+        bookmarkEventButton.setOnClickListener(this);
         return view;
     }
 
@@ -83,6 +89,14 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
                             + "," + event.getLatitude()
                             + "?q=(" + event.getName() + ")"));
             startActivity(mapIntent);
+        }
+
+        if (view == bookmarkEventButton) {
+            DatabaseReference eventRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_SAVED_EVENT);
+            eventRef.push().setValue(event);
+            Toast.makeText(getContext(), "Added to List", Toast.LENGTH_SHORT).show();
         }
     }
 }

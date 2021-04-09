@@ -5,11 +5,16 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.technight.musixmatch.Constants;
 import com.technight.musixmatch.R;
 import com.technight.musixmatch.models.Event;
 import com.technight.musixmatch.ui.EventDetailActivity;
@@ -53,7 +58,9 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         @BindView(R.id.eventCategoryView) TextView eventCategory;
         @BindView(R.id.eventCostView) TextView eventCostView;
         @BindView(R.id.eventAttendingView) TextView eventAttendingView;
+        @BindView(R.id.bookMarkButton) Button bookmarkButton;
         private Context mContext;
+        private Event event;
 
         public EventViewHolder(View itemView) {
             super(itemView);
@@ -63,11 +70,11 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         }
 
         public void bindEvent(Event event) {
-//            Picasso.get().load(event.getImageUrl()).into(eventImageView);
             eventNameView.setText(event.getName());
             eventCategory.setText("Category: " +event.getCategory());
             eventCostView.setText("Cost: " + event.getCost());
             eventAttendingView.setText("Attending: " + event.getAttendingCount());
+            bookmarkButton.setOnClickListener(this);
 
         }
 
@@ -78,6 +85,15 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
             intent.putExtra("position", itemPosition);
             intent.putExtra("currentEvents", Parcels.wrap(events));
             mContext.startActivity(intent);
+
+            if (view == bookmarkButton) {
+                DatabaseReference eventRef = FirebaseDatabase
+                        .getInstance()
+                        .getReference(Constants.FIREBASE_SAVED_EVENT);
+                eventRef.push().setValue(event);
+                Toast.makeText(mContext, "Added To List", Toast.LENGTH_SHORT);
+            }
+
         }
     }
 }

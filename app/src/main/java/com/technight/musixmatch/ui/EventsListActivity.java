@@ -7,9 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.technight.musixmatch.Constants;
 import com.technight.musixmatch.R;
 import com.technight.musixmatch.adapters.EventListAdapter;
 import com.technight.musixmatch.models.Event;
@@ -60,9 +65,13 @@ public class EventsListActivity extends AppCompatActivity {
                     recyclerView.setHasFixedSize(true);
 
                     showEvents();
+                    if (events == null) {
+                        showNoEventsMessage();
+                    }
                 } else {
                     showUnsuccessfulMessage();
                 }
+
             }
 
             @Override
@@ -72,6 +81,11 @@ public class EventsListActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void showNoEventsMessage() {
+        errorTextView.setText("Their are Currently \n No Events Within This Area");
+    }
+
     private void showFailureMessage() {
         errorTextView.setText("Oops, Your Data is Turned Off");
         errorTextView.setVisibility(View.VISIBLE);
