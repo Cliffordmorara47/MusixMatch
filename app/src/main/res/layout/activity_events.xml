@@ -12,7 +12,6 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/location"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="16dp"
@@ -44,26 +43,10 @@
         android:verticalScrollbarPosition="right"
         android:visibility="gone"/>
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/musicIntro"
-        android:id="@+id/eventsView"
-        android:layout_marginTop="45dp"
-        android:layout_centerHorizontal="false"
-        android:layout_centerVertical="false"
-        android:fontFamily="cursive"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="gone"/>
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/eventsView"
         android:layout_alignParentBottom="false"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
@@ -75,6 +58,5 @@
         android:scrollbarAlwaysDrawHorizontalTrack="false"
         android:scrollbarAlwaysDrawVerticalTrack="false"
         android:visibility="gone"/>
-
 
 </RelativeLayout>
