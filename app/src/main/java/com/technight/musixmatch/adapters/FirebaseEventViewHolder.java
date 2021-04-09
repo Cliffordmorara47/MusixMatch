@@ -17,7 +17,7 @@ import com.technight.musixmatch.Constants;
 import com.technight.musixmatch.R;
 import com.technight.musixmatch.models.Event;
 import com.technight.musixmatch.ui.EventDetailActivity;
-import com.technight.musixmatch.ui.EventDetailActivity_ViewBinding;
+//import com.technight.musixmatch.ui.EventDetailActivity_ViewBinding;
 
 import org.parceler.Parcels;
 
