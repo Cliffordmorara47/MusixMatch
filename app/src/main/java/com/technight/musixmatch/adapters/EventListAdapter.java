@@ -58,7 +58,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         @BindView(R.id.eventCategoryView) TextView eventCategory;
         @BindView(R.id.eventCostView) TextView eventCostView;
         @BindView(R.id.eventAttendingView) TextView eventAttendingView;
-        @BindView(R.id.bookMarkButton) Button bookmarkButton;
         private Context mContext;
         private Event event;
 
@@ -74,8 +73,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
             eventCategory.setText("Category: " +event.getCategory());
             eventCostView.setText("Cost: " + event.getCost());
             eventAttendingView.setText("Attending: " + event.getAttendingCount());
-            bookmarkButton.setOnClickListener(this);
-
         }
 
         @Override
@@ -85,15 +82,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
             intent.putExtra("position", itemPosition);
             intent.putExtra("currentEvents", Parcels.wrap(events));
             mContext.startActivity(intent);
-
-            if (view == bookmarkButton) {
-                DatabaseReference eventRef = FirebaseDatabase
-                        .getInstance()
-                        .getReference(Constants.FIREBASE_SAVED_EVENT);
-                eventRef.push().setValue(event);
-                Toast.makeText(mContext, "Added To List", Toast.LENGTH_SHORT);
-            }
-
         }
     }
 }
