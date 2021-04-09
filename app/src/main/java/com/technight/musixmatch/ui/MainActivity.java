@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,39 +27,19 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String TAG = "MeetUp";
-    @BindView(R.id.location) EditText userLocation;
+    public static final String TAG = MainActivity.class.getSimpleName();
     @BindView(R.id.searchEventButton) Button searchEventButton;
     @BindView(R.id.bookMarkIcon) TextView bookMarkIcon;
     private DatabaseReference locationReference;
     private ValueEventListener locationReferenceListener;
-
-    private String userAddress;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        locationReference = FirebaseDatabase
-                .getInstance()
-                .getReference()
-                .child(Constants.USER_LOCATION_KEY);
-
-         locationReferenceListener = locationReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot locationSnapShot : dataSnapshot.getChildren()) {
-                    String location = locationSnapShot.getValue().toString();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-
-            }
-        });
 
         searchEventButton.setOnClickListener(this);
         bookMarkIcon.setOnClickListener(this);
@@ -73,31 +53,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.options_menu, menu);
-        return true;
-    }
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.search_view, menu);
+        ButterKnife.bind(this);
 
-    private void saveLocationToDatabase(String location) {
-        locationReference.push().setValue(location);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = sharedPreferences.edit();
+
+        MenuItem menuItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String location) {
+               Intent intent = new Intent(MainActivity.this, EventsListActivity.class);
+               startActivity(intent);
+               return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+        return true;
     }
 
     @Override
     public void onClick(View view) {
         if (view == searchEventButton) {
-            String location = userLocation.getText().toString();
-            saveLocationToDatabase(location);
             Intent intent = new Intent(MainActivity.this, EventsListActivity.class);
-            intent.putExtra("location", location);
             startActivity(intent);
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        locationReference.removeEventListener(locationReferenceListener);
+    private void updateRecentAddress(String location){
+        editor.putString(Constants.RECENT_LOCATION_KEY, location).apply();
     }
 }
