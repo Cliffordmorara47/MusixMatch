@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MusixMatch">
-        <activity android:name=".ui.BookmarkedEventsList"></activity>
+        <activity android:name=".ui.CreateAccount">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.BookmarkedEventsList" />
         <activity android:name=".ui.EventDetailActivity" />
         <activity android:name=".ui.EventsListActivity">
             <meta-data
@@ -20,12 +27,7 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/ActionBarTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/Theme.Design.NoActionBar">
         </activity>
 
         <meta-data
