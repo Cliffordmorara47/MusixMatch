@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.technight.musixmatch.Constants;
@@ -38,7 +40,12 @@ public class BookmarkedEventsList extends AppCompatActivity {
         setContentView(R.layout.activity_events);
         ButterKnife.bind(this);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_SAVED_EVENT) ;
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = firebaseUser.getUid();
+        databaseReference = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_SAVED_EVENT)
+                .child(uid);
         setUpFirebaseAdapter();
         hideProgressBar();
         showEvents();

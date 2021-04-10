@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 import org.parceler.Generated;
 import org.parceler.Parcel;
 
-
+@Parcel
 @Generated("jsonschema2pojo")
 public class EventsHandler {
 

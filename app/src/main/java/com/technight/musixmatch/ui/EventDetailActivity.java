@@ -20,10 +20,9 @@ import butterknife.ButterKnife;
 public class
 EventDetailActivity extends AppCompatActivity {
 
-    @BindView(R.id.viewEventPage)
-    ViewPager viewPager;
+    @BindView(R.id.viewEventPage) ViewPager viewPager;
     private EventPagerAdapter eventPagerAdapter;
-    List<Event> events;
+    List<Event> mEvents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +30,10 @@ EventDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_detail);
         ButterKnife.bind(this);
 
-        events = Parcels.unwrap(getIntent().getParcelableExtra("events"));
+        mEvents = Parcels.unwrap(getIntent().getParcelableExtra("events"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
-        eventPagerAdapter = new EventPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, events);
+        eventPagerAdapter = new EventPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mEvents);
         viewPager.setAdapter(eventPagerAdapter);
         viewPager.setCurrentItem(startingPosition);
     }
