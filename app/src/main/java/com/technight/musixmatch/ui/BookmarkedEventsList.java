@@ -32,7 +32,7 @@ public class BookmarkedEventsList extends AppCompatActivity {
 
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
     @BindView(R.id.errorTextView) TextView errorTextView;
-    @BindView(R.id.progressBar) ProgressBar progressBar;
+    @BindView(R.id.loadingTextView) TextView loadingTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +81,7 @@ public class BookmarkedEventsList extends AppCompatActivity {
     }
 
     private void hideProgressBar() {
-        progressBar.setVisibility(View.GONE);
+        loadingTextView.setVisibility(View.GONE);
     }
 
     @Override
