@@ -55,11 +55,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="Don't have an account? Sign up here!"
+            android:text="@string/createAccount"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
 
 </RelativeLayout>

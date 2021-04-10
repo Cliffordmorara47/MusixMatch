@@ -11,21 +11,19 @@
     <ImageView
         android:id="@+id/eventImageView"
         android:layout_width="100dp"
-        android:layout_height="237dp"
-        android:adjustViewBounds="true"
-        android:background="#ECE6E6"
+        android:layout_height="match_parent"
+        android:background="@color/black"
         android:cropToPadding="true"
         android:rotation="0"
         android:rotationX="20"
         android:rotationY="29"
         android:scaleType="centerInside"
-        android:src="@drawable/event" />
+        android:src="@drawable/hallow" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
-        android:backgroundTint="#E4D7D7"
+        android:background="@drawable/background"
         android:orientation="vertical"
         android:padding="0dp">
 
@@ -35,21 +33,22 @@
             android:layout_height="wrap_content"
             android:fontFamily="serif"
             android:paddingLeft="10dp"
-            android:paddingBottom="@dimen/cardview_default_elevation"
+            android:paddingBottom="10dp"
             android:text="Event Name"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
             android:textSize="15dp"
-            android:textStyle="italic|bold" />
+            android:textStyle="italic|bold"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/eventCategoryView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="15dp"
             android:text="Event Category"
-            android:textAlignment="textStart"
+            android:textAlignment="center"
             android:textColor="@color/teal_700"
             android:textSize="11dp"
             android:textStyle="italic|bold" />
@@ -61,9 +60,9 @@
             android:paddingLeft="10dp"
             android:paddingBottom="40dp"
             android:text="12"
-            android:textAlignment="textStart"
-            android:textColor="@color/teal_700"
-            android:textSize="11dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12dp"
             android:textStyle="italic|bold" />
 
         <TextView
@@ -72,21 +71,9 @@
             android:layout_height="47dp"
             android:paddingLeft="10dp"
             android:text="50 Dollars"
-            android:textAlignment="gravity"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="11dp"
             android:textStyle="italic|bold" />
-
-        <Button
-            android:id="@+id/bookMarkButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/gradient"
-            android:text="BookMark"
-            android:textColor="@color/colorTextIcons"
-            android:textSize="9dp"
-            android:visibility="visible" />
-
     </LinearLayout>
 </LinearLayout>

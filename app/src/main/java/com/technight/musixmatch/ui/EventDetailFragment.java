@@ -90,13 +90,5 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
                             + "?q=(" + event.getName() + ")"));
             startActivity(mapIntent);
         }
-
-        if (view == bookmarkEventButton) {
-            DatabaseReference eventRef = FirebaseDatabase
-                    .getInstance()
-                    .getReference(Constants.FIREBASE_SAVED_EVENT);
-            eventRef.push().setValue(event);
-            Toast.makeText(getContext(), "Added to List", Toast.LENGTH_SHORT).show();
-        }
     }
 }
