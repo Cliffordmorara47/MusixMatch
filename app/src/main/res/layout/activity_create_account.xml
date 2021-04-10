@@ -7,10 +7,24 @@
     tools:context=".ui.CreateAccount"
     android:background="@drawable/login">
 
+    <TextView
+        android:id="@+id/loadingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorTextIcons"
+        android:layout_margin="20dp"
+        android:visibility="gone"
+        android:text="Loading..."
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="cursive"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/lock"/>
+        android:src="@drawable/lock"
+        android:id="@+id/createAccountImageView"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,6 +75,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textColorHint="@color/black"
+            android:nextFocusDown="@id/passwordEdit"
             android:inputType="textPassword"
             android:layout_marginBottom="12dp"/>
 
@@ -111,5 +126,16 @@
         android:textAlignment="center"
         android:textColor="@color/colorTextIcons"
         android:textSize="35dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:id="@+id/createAccountTextView"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"/>
 </RelativeLayout>
