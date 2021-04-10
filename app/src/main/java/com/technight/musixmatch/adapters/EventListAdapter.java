@@ -27,12 +27,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.EventViewHolder> {
-    private List<Event> events;
+    private List<Event> mEvents;
     private Context mContext;
 
-    public EventListAdapter(Context context, List<Event> currentEvents) {
+    public EventListAdapter(Context context, List<Event> events) {
         mContext = context;
-        events = currentEvents;
+        mEvents = events;
     }
 
     @Override
@@ -44,22 +44,20 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
 
     @Override
     public void onBindViewHolder(EventListAdapter.EventViewHolder holder, int position) {
-        holder.bindEvent(events.get(position));
+        holder.bindEvent(mEvents.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return events.size();
+        return mEvents.size();
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @BindView(R.id.eventImageView) ImageView eventImageView;
         @BindView(R.id.eventNameView) TextView eventNameView;
         @BindView(R.id.eventCategoryView) TextView eventCategory;
         @BindView(R.id.eventCostView) TextView eventCostView;
         @BindView(R.id.eventAttendingView) TextView eventAttendingView;
         private Context mContext;
-        private Event event;
 
         public EventViewHolder(View itemView) {
             super(itemView);
@@ -80,7 +78,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, EventDetailActivity.class);
             intent.putExtra("position", itemPosition);
-            intent.putExtra("currentEvents", Parcels.wrap(events));
+            intent.putExtra("events", Parcels.wrap(mEvents));
             mContext.startActivity(intent);
         }
     }

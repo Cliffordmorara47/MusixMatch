@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -27,7 +29,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class EventDetailFragment extends Fragment implements View.OnClickListener{
-    @BindView(R.id.eventImageView) ImageView eventImage;
     @BindView(R.id.eventNameView) TextView eventName;
     @BindView(R.id.eventCostView) TextView eventCost;
     @BindView(R.id.eventCategoryView) TextView eventCategory;
@@ -37,17 +38,16 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
     @BindView(R.id.bookmarkEventButton) TextView bookmarkEventButton;
     @BindView(R.id.eventDescription) TextView eventDescription;
 
-    private Event event;
+    private Event mEvent;
 
     public EventDetailFragment() {
 
     }
 
-    public static EventDetailFragment newInstance(Event newEvent) {
+    public static EventDetailFragment newInstance(Event event) {
         EventDetailFragment eventDetailFragment = new EventDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("newEvent", Parcels.wrap(newEvent));
-
+        args.putParcelable("event", Parcels.wrap(event));
         eventDetailFragment.setArguments(args);
         return eventDetailFragment;
     }
@@ -56,21 +56,19 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         assert getArguments() != null;
-        event = Parcels.unwrap(getArguments().getParcelable("newEvent"));
+        mEvent = Parcels.unwrap(getArguments().getParcelable("event"));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_detail, container, false);
         ButterKnife.bind(this, view);
-        Picasso.get().load(event.getImageUrl()).into(eventImage);
-        eventName.setText(event.getName());
-        eventCost.setText(event.getCost().toString());
-        eventCategory.setText(event.getCategory());
-        eventDescription.setText(event.getDescription());
-        eventAddress.setText(event.getLocation().toString());
-        eventInfo.setText(event.getEventSiteUrl());
-        eventDetail.setText(event.getAttendingCount());
+        eventName.setText(mEvent.getName());
+        eventCategory.setText(mEvent.getCategory());
+        eventDescription.setText(mEvent.getDescription());
+//        eventAddress.setText(mEvent.getLocation().toString());
+//        eventInfo.setText(mEvent.getEventSiteUrl());
+//        eventDetail.setText(mEvent.getAttendingCount().toString());
         eventInfo.setOnClickListener(this);
 
         bookmarkEventButton.setOnClickListener(this);
@@ -80,15 +78,32 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View view) {
         if (view == eventInfo) {
-            Intent webIntent = new Intent(Intent.ACTION_VIEW);
+            Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(mEvent.getEventSiteUrl()));
+            startActivity(webIntent);
         }
 
         if (view == eventAddress) {
             Intent mapIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("geo:" + event.getLongitude()
-                            + "," + event.getLatitude()
-                            + "?q=(" + event.getName() + ")"));
+                    Uri.parse("geo:" + mEvent.getLongitude()
+                            + "," + mEvent.getLatitude()
+                            + "?q=(" + mEvent.getName() + ")"));
             startActivity(mapIntent);
+        }
+
+        if (view == bookmarkEventButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference eventRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_SAVED_EVENT)
+                    .child(uid);
+            DatabaseReference pushRef = eventRef.push();
+            String pushId = pushRef.getKey();
+            mEvent.setPushId(pushId);
+            pushRef.setValue(mEvent);
+
+            Toast.makeText(getContext(), "Added To Bookmarks", Toast.LENGTH_SHORT).show();
         }
     }
 }

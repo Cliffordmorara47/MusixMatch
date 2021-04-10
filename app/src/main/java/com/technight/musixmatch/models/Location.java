@@ -147,11 +147,11 @@ public class Location {
         this.crossStreets = crossStreets;
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        return String.format("%s, %s, %s, %s, %s", this.address1, this.city, this.country, this.zipCode);
-    }
+//    @NonNull
+//    @Override
+//    public String toString() {
+//        return String.format("%s, %s, %s, %s, %s", this.address1, this.city, this.country, this.zipCode);
+//    }
 
 
 }

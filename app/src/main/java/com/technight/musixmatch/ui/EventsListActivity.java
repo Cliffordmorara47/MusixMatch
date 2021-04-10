@@ -42,11 +42,12 @@ public class EventsListActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
     @BindView(R.id.errorTextView) TextView errorTextView;
     @BindView(R.id.progressBar) ProgressBar progressBar;
-    private EventListAdapter eventListAdapter;
-    public List<Event> events;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private String recentAddress;
+
+    private EventListAdapter eventListAdapter;
+    public List<Event> events;
 
 
     @Override

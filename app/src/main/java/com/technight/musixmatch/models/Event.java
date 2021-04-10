@@ -10,6 +10,7 @@ import org.parceler.Parcel;
 @Parcel
 @Generated("jsonschema2pojo")
 public class Event {
+    private String pushId;
 
     @SerializedName("attending_count")
     @Expose
@@ -286,4 +287,11 @@ public class Event {
         this.businessId = businessId;
     }
 
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }

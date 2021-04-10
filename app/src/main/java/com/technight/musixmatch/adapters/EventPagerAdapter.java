@@ -14,25 +14,25 @@ import java.util.List;
 
 public class EventPagerAdapter extends FragmentPagerAdapter {
 
-    private List<Event> events;
+    private List<Event> mEvents;
 
-    public EventPagerAdapter(@NonNull FragmentManager fm, int behavior, List<Event> newEvents) {
+    public EventPagerAdapter(@NonNull FragmentManager fm, int behavior, List<Event> events) {
         super(fm, behavior);
-        events = newEvents;
+        mEvents = events;
     }
 
     @Override
     public int getCount() {
-        return events.size();
+        return mEvents.size();
     }
 
     @Override
     public Fragment getItem(int position) {
-        return EventDetailFragment.newInstance(events.get(position));
+        return EventDetailFragment.newInstance(mEvents.get(position));
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return events.get(position).getName();
+        return mEvents.get(position).getName();
     }
 }
