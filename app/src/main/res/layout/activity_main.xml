@@ -176,25 +176,27 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_gradient"
         android:text="BookMarks"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/colorPrimary"
         android:textSize="9dp"
         android:visibility="visible"
         android:layout_above="@id/searchEventButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"/>
+
     <Button
         android:id="@+id/searchEventButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/teal_200"
+        android:background="@color/colorAccent"
+        android:backgroundTint="@color/colorAccent"
         android:fontFamily="cursive"
-        android:text="Find Events"
-        android:textColor="@color/white"
+        android:text="Find Events.."
+        android:textColor="@color/teal_200"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:backgroundTint="@color/teal_700"/>
+        app:iconTint="#0F9EAF" />
 
 </RelativeLayout>

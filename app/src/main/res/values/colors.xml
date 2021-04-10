@@ -16,4 +16,5 @@
     <color name="colorSecondaryText">#727272</color>
     <color name="colorDivider">#B6B6B6</color>
     <color name="transparent">#00000000</color>
+    <color name="transBorder">#000ADD1E</color>
 </resources>

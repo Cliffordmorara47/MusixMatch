@@ -41,7 +41,7 @@ public class EventsListActivity extends AppCompatActivity {
     public static final String TAG = EventsListActivity.class.getSimpleName();
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
     @BindView(R.id.errorTextView) TextView errorTextView;
-    @BindView(R.id.progressBar) ProgressBar progressBar;
+    @BindView(R.id.loadingTextView) TextView loadingTextView;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private String recentAddress;
@@ -121,7 +121,7 @@ public class EventsListActivity extends AppCompatActivity {
     }
 
     private void hideProgressBar() {
-        progressBar.setVisibility(View.GONE);
+        loadingTextView.setVisibility(View.GONE);
     }
     
     private void displayEvents(String location) {
