@@ -1,5 +1,6 @@
 package com.technight.musixmatch.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.technight.musixmatch.R;
 
 import butterknife.BindView;
@@ -24,6 +26,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.createUserButton) Button createUserButton;
     @BindView(R.id.loginTextView) TextView loginTextView;
     private FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         createUserButton.setOnClickListener(this);
         loginTextView.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
+        createAuthStateListener();
     }
 
     @Override
@@ -63,5 +67,35 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(CreateAccount.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void createAuthStateListener() {
+        authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+                if (firebaseAuth != null) {
+                    Intent intent = new Intent(CreateAccount.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        firebaseAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (authStateListener != null) {
+            firebaseAuth.removeAuthStateListener(authStateListener);
+        }
     }
 }
