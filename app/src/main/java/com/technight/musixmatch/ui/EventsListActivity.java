@@ -111,7 +111,7 @@ public class EventsListActivity extends AppCompatActivity {
         errorTextView.setVisibility(View.VISIBLE);
     }
     private void showUnsuccessfulMessage() {
-        errorTextView.setText("Their Was an Error With the Search \n Please Try Again Later");
+        errorTextView.setText("There are Currently \n No Events Within This Area");
         errorTextView.setVisibility(View.VISIBLE);
     }
 
