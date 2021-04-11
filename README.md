@@ -3,10 +3,11 @@ Is an android based app that allows a user to search for an event within a area.
 
 ## Application HomePage
 <img src="https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/pager.png?raw=true" width="150px" height="400px" align="right">
-<img src="https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/login.png?raw=true" width="150px" height="400px" align="right">
-<img src="https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/createaccount.png?raw=true" width="150px" height="400px" align="right">
+
 <img src="https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/homepage.png?raw=true" width="150px" height="400px" align="right">
 <img src="https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/list.png?raw=true" width="150px" height="400px" align="right">
+<img src="https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/login.png?raw=true" width="150px" height="400px" align="right">
+<img src="https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/createaccount.png?raw=true" width="150px" height="400px" align="right">
 
 ---
 ## Table of contents
