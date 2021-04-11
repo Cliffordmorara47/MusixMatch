@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.passwordEdit) TextView passwordEdit;
     @BindView(R.id.loginButton) Button loginButton;
     @BindView(R.id.loadingTextView) TextView loadingTextView;
-    @BindView(R.id.progressBar) ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -113,7 +112,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void showLoadingState() {
         loadingTextView.setVisibility(View.VISIBLE);
-        progressBar.setVisibility(View.VISIBLE);
         passwordEdit.setVisibility(View.GONE);
         emailEdit.setVisibility(View.GONE);
         createAccountTextView.setVisibility(View.GONE);
@@ -122,7 +120,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void hideLoadingState() {
         loadingTextView.setVisibility(View.GONE);
-        progressBar.setVisibility(View.GONE);
         passwordEdit.setVisibility(View.VISIBLE);
         emailEdit.setVisibility(View.VISIBLE);
         createAccountTextView.setVisibility(View.VISIBLE);

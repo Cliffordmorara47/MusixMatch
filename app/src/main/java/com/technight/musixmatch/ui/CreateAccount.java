@@ -37,9 +37,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.createUserButton) Button createUserButton;
     @BindView(R.id.loginTextView) TextView loginTextView;
     @BindView(R.id.loadingTextView) TextView loadingTextView;
-    @BindView(R.id.progressBar) ProgressBar progressBar;
     @BindView(R.id.createAccountTextView) TextView createAccountTextView;
-    @BindView(R.id.createAccountImageView) ImageView createAccountImageView;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
     private String name;
@@ -99,7 +97,6 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
     private void showLoadingState() {
         loadingTextView.setVisibility(View.VISIBLE);
-        progressBar.setVisibility(View.VISIBLE);
         nameEdit.setVisibility(View.GONE);
         emailEdit.setVisibility(View.GONE);
         passwordEdit.setVisibility(View.GONE);
@@ -107,13 +104,11 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         createUserButton.setVisibility(View.GONE);
         loginTextView.setVisibility(View.GONE);
         createAccountTextView.setVisibility(View.GONE);
-        createAccountImageView.setVisibility(View.GONE);
+//        createAccountImageView.setVisibility(View.GONE);
     }
 
     private void hideLoadingState() {
        loadingTextView.setVisibility(View.GONE);
-       progressBar.setVisibility(View.GONE);
-       progressBar.setVisibility(View.GONE);
         nameEdit.setVisibility(View.VISIBLE);
         emailEdit.setVisibility(View.VISIBLE);
         passwordEdit.setVisibility(View.VISIBLE);

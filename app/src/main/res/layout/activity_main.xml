@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/black"
     tools:context="com.technight.musixmatch.ui.MainActivity">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/cool"/>
+        android:src="@drawable/coolcur"/>
 
     <TextView
         android:text="Events Finder"
@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/black"
         android:textSize="55sp"
         android:textStyle="bold"
         app:fontFamily="cursive" />
@@ -37,7 +37,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
         android:text="@string/description"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:fontFamily="monospace" />
@@ -51,10 +51,11 @@
         android:layout_centerHorizontal="false"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:fontFamily="cursive" />
+        app:fontFamily="cursive"
+        android:textFontWeight="3500"/>
 
     <TextView
         android:text="Visual Arts"
@@ -65,10 +66,11 @@
         android:gravity="right"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:fontFamily="cursive" />
+        app:fontFamily="cursive"
+        android:textFontWeight="3500"/>
 
     <TextView
         android:text="Lectures $ Books"
@@ -79,9 +81,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/purple_700"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textFontWeight="3500"
         app:fontFamily="cursive"
         android:paddingTop="20sp"/>
 
@@ -94,11 +97,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/purple_700"
         android:textSize="25sp"
         android:textStyle="bold"
         app:fontFamily="cursive"
-        android:paddingTop="15sp"/>
+        android:paddingTop="15sp"
+        android:textFontWeight="3500"/>
 
     <TextView
         android:text="Fashion"
@@ -109,7 +113,7 @@
         android:layout_centerHorizontal="false"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:fontFamily="cursive" />
@@ -123,11 +127,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/purple_700"
         android:textSize="25sp"
         android:textStyle="bold"
         app:fontFamily="cursive"
-        android:paddingTop="15sp"/>
+        android:paddingTop="15sp"
+        android:textFontWeight="3500"/>
 
     <TextView
         android:text="Charities"
@@ -138,10 +143,11 @@
         android:gravity="right"
         android:layout_marginTop="30dp"
         android:fontFamily="cursive"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:fontFamily="cursive" />
+        app:fontFamily="cursive"
+        android:textFontWeight="3500"/>
 
     <TextView
         android:text="NightLife"
@@ -151,11 +157,12 @@
         android:layout_below="@+id/pop"
         android:layout_centerHorizontal="true"
         android:fontFamily="cursive"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:fontFamily="cursive"
-        android:paddingTop="35sp"/>
+        android:paddingTop="35sp"
+        android:textFontWeight="3500"/>
 
     <TextView
         android:text="...and many other Great Events"
@@ -165,7 +172,7 @@
         android:layout_below="@+id/countryMusic"
         android:layout_centerHorizontal="true"
         android:fontFamily="cursive"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:fontFamily="cursive"
@@ -182,7 +189,8 @@
         android:layout_above="@id/searchEventButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:textFontWeight="4500"/>
 
     <Button
         android:id="@+id/searchEventButton"
@@ -194,9 +202,10 @@
         android:backgroundTint="@color/colorAccent"
         android:fontFamily="cursive"
         android:text="Find Events.."
-        android:textColor="@color/teal_200"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:iconTint="#0F9EAF" />
+        app:iconTint="#0F9EAF"
+        android:textFontWeight="3500"/>
 
 </RelativeLayout>

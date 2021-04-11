@@ -69,7 +69,7 @@
             android:paddingBottom="15dp"
             android:text="Event Category"
             android:textAlignment="center"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/purple_700"
             android:textSize="11dp"
             android:textStyle="italic|bold" />
 
@@ -81,14 +81,15 @@
             android:paddingBottom="40dp"
             android:text="12"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="12dp"
+            android:textColor="@color/purple_700"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
             android:textStyle="italic|bold" />
 
         <TextView
             android:id="@+id/eventCostView"
             android:layout_width="match_parent"
-            android:layout_height="47dp"
+            android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="50 Dollars"
             android:textAlignment="center"
