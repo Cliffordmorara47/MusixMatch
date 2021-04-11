@@ -141,7 +141,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                         hideLoadingState();
 
                         if (task.isSuccessful()) {
-                            Toast.makeText(CreateAccount.this, "Authentication Successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateAccount.this, "Account Creation Successful", Toast.LENGTH_LONG).show();
                             createFireBaseUserProfile(Objects.requireNonNull(task.getResult().getUser()));
                         } else {
                             Toast.makeText(CreateAccount.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
@@ -157,7 +157,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                 final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                 if (firebaseUser != null) {
-                    Intent intent = new Intent(CreateAccount.this, MainActivity.class);
+                    Intent intent = new Intent(CreateAccount.this, LoginActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
