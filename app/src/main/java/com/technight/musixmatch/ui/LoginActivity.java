@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = LoginActivity.class.getSimpleName();
-    @BindView(R.id.registerText) TextView registerText;
+    @BindView(R.id.createAccountTextView) TextView createAccountTextView;
     @BindView(R.id.emailEdit) TextView emailEdit;
     @BindView(R.id.passwordEdit) TextView passwordEdit;
     @BindView(R.id.loginButton) Button loginButton;
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        registerText.setOnClickListener(this);
+        createAccountTextView.setOnClickListener(this);
         loginButton.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        if (view == registerText) {
+        if (view == createAccountTextView) {
             Intent intent = new Intent(LoginActivity.this, CreateAccount.class);
             startActivity(intent);
             finish();
@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressBar.setVisibility(View.VISIBLE);
         passwordEdit.setVisibility(View.GONE);
         emailEdit.setVisibility(View.GONE);
-        registerText.setVisibility(View.GONE);
+        createAccountTextView.setVisibility(View.GONE);
         loginButton.setVisibility(View.GONE);
     }
 
@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressBar.setVisibility(View.GONE);
         passwordEdit.setVisibility(View.VISIBLE);
         emailEdit.setVisibility(View.VISIBLE);
-        registerText.setVisibility(View.VISIBLE);
+        createAccountTextView.setVisibility(View.VISIBLE);
         loginButton.setVisibility(View.VISIBLE);
     }
 }
