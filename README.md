@@ -1,8 +1,12 @@
 # MusixMatch
-Is an android based app that displays various songs lyrics.
+Is an android based app that allows a user to search for an event within a area.
 
 ## Application HomePage
-![HomePage](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/screenshot.png?raw=true)
+![Create New Account](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/createaccount.png?raw=true)
+![Sign In](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/login.png?raw=true)
+![HomePage](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/homepage.png?raw=true)
+![Event List](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/list.png?raw=true)
+![Event Detail Page](https://github.com/Cliffordmorara47/MusixMatch/blob/master/app/src/main/res/drawable/pager.png?raw=true)
 ---
 ## Table of contents
 - [Project description](#project-description)
