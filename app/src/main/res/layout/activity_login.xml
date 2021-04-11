@@ -6,16 +6,6 @@
     tools:context=".ui.LoginActivity"
     android:background="@drawable/loglock">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:visibility="gone"/>
-
     <TextView
         android:id="@+id/loadingTextView"
         android:layout_width="wrap_content"
@@ -45,8 +35,8 @@
             android:inputType="textEmailAddress"
             android:nextFocusDown="@id/passwordEdit"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/purple_700"
+            android:textColorHint="@color/purple_700"
             android:textSize="22sp" />
 
         <EditText
@@ -58,8 +48,8 @@
             android:inputType="textPassword"
             android:nextFocusDown="@id/passwordEdit"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/purple_700"
+            android:textColorHint="@color/purple_700"
             android:textSize="22sp" />
 
         <Button

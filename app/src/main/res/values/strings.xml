@@ -3,8 +3,8 @@
     <string name="search_title">Search</string>
     <string name="description">"Find Events Near You"</string>
     <string name="musicIntro">Events Near You:</string>
-    <string name="login">Already have an account?Log in<u> <i>here!</i></u></string>
-    <string name="createAccount" tools:ignore="StringEscaping">Dont have an account? Sign up<u> <i>here!</i></u></string>
+    <string name="login">Already have an account? <font color='blue'><u>Log In Here</u></font></string>
+    <string name="createAccount" tools:ignore="StringEscaping">Dont have an account? <font color='blue'><u>Sign Up Here</u></font></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
