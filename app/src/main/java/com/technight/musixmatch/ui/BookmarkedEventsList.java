@@ -67,7 +67,7 @@ public class BookmarkedEventsList extends AppCompatActivity {
             @NonNull
             @Override
             public FirebaseEventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.events_list, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bookmark_list_item_drag, parent, false);
                 return new FirebaseEventViewHolder(view);
             }
         };

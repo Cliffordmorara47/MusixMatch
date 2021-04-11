@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="30dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -11,7 +12,65 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/upcoming"/>
+            android:src="@drawable/upcoming"
+            android:scaleType="centerCrop"
+            android:id="@+id/eventImageView"/>
+
+        <ImageView
+            android:id="@+id/dragIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/eventImageView"
+            android:layout_alignParentTop="@+id/eventImageView"
+            android:gravity="bottom|left"
+            android:src="@drawable/baseline_reorder_black_24dp"/>
+
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventNameView"
+            android:text="Event Name"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="@font/im_fell_english"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textAlignment="center"
+            android:id="@+id/eventCategoryView"
+            android:textStyle="bold"
+            android:textSize="11dp"
+            android:fontFamily="@font/im_fell_english"
+            android:textColor="@color/black"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cost"
+                android:id="@+id/eventCostView"
+                android:textAlignment="center"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>
