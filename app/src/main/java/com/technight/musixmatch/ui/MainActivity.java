@@ -46,13 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         searchEventButton.setOnClickListener(this);
         bookMarkIcon.setOnClickListener(this);
 
-        bookMarkIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, BookmarkedEventsList.class);
-                startActivity(intent);
-            }
-        });
 
         firebaseAuth = FirebaseAuth.getInstance();
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -113,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == searchEventButton) {
             Intent intent = new Intent(MainActivity.this, EventsListActivity.class);
+            startActivity(intent);
+        }
+        if (view == bookMarkIcon) {
+            Intent intent = new Intent(MainActivity.this, BookmarkedEventsList.class);
             startActivity(intent);
         }
     }

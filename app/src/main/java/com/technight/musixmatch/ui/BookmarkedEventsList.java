@@ -33,11 +33,12 @@ public class BookmarkedEventsList extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
     @BindView(R.id.errorTextView) TextView errorTextView;
     @BindView(R.id.loadingTextView) TextView loadingTextView;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.activity_bookmarks);
         ButterKnife.bind(this);
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -80,8 +81,13 @@ public class BookmarkedEventsList extends AppCompatActivity {
         recyclerView.setVisibility(View.VISIBLE);
     }
 
-    private void hideProgressBar() {
+    private void showProgressBar() {
+        loadingTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar(){
         loadingTextView.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override

@@ -66,10 +66,9 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
         eventName.setText(mEvent.getName());
         eventCategory.setText(mEvent.getCategory());
         eventDescription.setText(mEvent.getDescription());
-//        eventAddress.setText(mEvent.getLocation().toString());
-//        eventInfo.setText(mEvent.getEventSiteUrl());
-//        eventDetail.setText(mEvent.getAttendingCount().toString());
         eventInfo.setOnClickListener(this);
+        eventAddress.setOnClickListener(this);
+        eventDetail.setOnClickListener(this);
 
         bookmarkEventButton.setOnClickListener(this);
         return view;
@@ -89,6 +88,12 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
                             + "," + mEvent.getLatitude()
                             + "?q=(" + mEvent.getName() + ")"));
             startActivity(mapIntent);
+        }
+
+        if (view == eventDetail) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(mEvent.getEventSiteUrl()));
+            startActivity(webIntent);
         }
 
         if (view == bookmarkEventButton) {
