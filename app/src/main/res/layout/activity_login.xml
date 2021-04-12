@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.LoginActivity"
-    android:background="@drawable/loglock">
+    android:background="@drawable/loglock2">
 
     <TextView
         android:id="@+id/loadingTextView"
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textColor="@color/black"
+        android:backgroundTint="@color/black"
         android:layout_margin="20dp"
         android:visibility="gone"
         android:text="Loading..."

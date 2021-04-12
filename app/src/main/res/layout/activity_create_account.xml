@@ -5,14 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.CreateAccount"
-    android:background="@drawable/loglock">
+    android:background="@drawable/loglock4">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerInParent="true"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Create Account"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:id="@+id/createAccountTextView"/>
 
     <TextView
         android:id="@+id/loadingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/black"
         android:layout_margin="20dp"
         android:visibility="gone"
         android:text="Loading..."
@@ -38,7 +52,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textColorHint="@color/purple_700"
+            android:textColorHint="@color/black"
             android:nextFocusDown="@id/passwordEdit"
             android:layout_marginBottom="12dp"/>
 
@@ -51,7 +65,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textColorHint="@color/purple_700"
+            android:textColorHint="@color/black"
             android:nextFocusDown="@id/passwordEdit"
             android:layout_marginBottom="12dp"
             android:inputType="textEmailAddress"/>
@@ -65,7 +79,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textColorHint="@color/purple_700"
+            android:textColorHint="@color/black"
             android:nextFocusDown="@id/passwordEdit"
             android:inputType="textPassword"
             android:layout_marginBottom="12dp"/>
@@ -79,7 +93,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textColorHint="@color/purple_700"
+            android:textColorHint="@color/black"
             android:inputType="textPassword"
             android:layout_marginBottom="12dp"
             android:nextFocusDown="@id/passwordEdit"/>
@@ -107,16 +121,4 @@
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerInParent="true"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Create Account"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:id="@+id/createAccountTextView"/>
 </RelativeLayout>

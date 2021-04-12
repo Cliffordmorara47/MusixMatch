@@ -3,6 +3,7 @@ package com.technight.musixmatch.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,8 @@ public class FirebaseEventViewHolder extends RecyclerView.ViewHolder implements 
     View view;
     Context context;
 
+    public ImageView eventImageView;
+
     public FirebaseEventViewHolder(View itemView) {
         super(itemView);
         view = itemView;
@@ -38,6 +41,7 @@ public class FirebaseEventViewHolder extends RecyclerView.ViewHolder implements 
         TextView eventNameView = (TextView) view.findViewById(R.id.eventNameView);
         TextView eventCostView = (TextView) view.findViewById(R.id.eventCostView);
         TextView eventCategoryView = (TextView) view.findViewById(R.id.eventCategoryView);
+        eventImageView = (ImageView)  view.findViewById(R.id.eventImageView);
 //        TextView eventAddressView = (TextView) view.findViewById(R.id.eventAddress);
 
         eventNameView.setText(event.getName());
