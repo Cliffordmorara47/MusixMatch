@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.LoginActivity"
-    android:background="@drawable/loglock2">
+    android:background="@drawable/loglock">
 
     <TextView
         android:id="@+id/loadingTextView"
