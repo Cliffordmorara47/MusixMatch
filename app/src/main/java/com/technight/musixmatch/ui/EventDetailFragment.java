@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,7 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
     @BindView(R.id.eventAddress) TextView eventAddress;
     @BindView(R.id.bookmarkEventButton) TextView bookmarkEventButton;
     @BindView(R.id.eventDescription) TextView eventDescription;
+    @BindView(R.id.bookMarksIcon) Button bookMarksIcon;
 
     private Event mEvent;
 
@@ -71,6 +73,7 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
         eventDetail.setOnClickListener(this);
 
         bookmarkEventButton.setOnClickListener(this);
+        bookMarksIcon.setOnClickListener(this);
         return view;
     }
 
