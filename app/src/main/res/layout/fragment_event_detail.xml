@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.EventDetailActivity">
 
+    <Button
+        android:id="@+id/bookMarksIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/baseline_bookmarks_black_24dp"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="9dp"
+        android:visibility="visible"
+        android:layout_above="@id/searchEventButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:textFontWeight="4500"
+        />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -37,7 +53,7 @@
                 android:text="City Hall"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/eventCostView"
@@ -46,9 +62,9 @@
                 android:layout_alignBottom="@+id/eventNameView"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:text="50 Dollars"
+                android:text=""
                 android:textColor="@color/teal_200"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/eventCategoryView"
@@ -59,7 +75,7 @@
                 android:layout_alignParentLeft="true"
                 android:text="Lectures $ Books"
                 android:textColor="@color/teal_200"
-                android:textStyle="italic" />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -129,7 +145,7 @@
                     android:text= "What's up Yelpers! \n Join me for our first recurring Yelp Happy Hour! I know it's late, and it's on a Friday night, but if you can make it, it'll be fun!..."
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:textStyle="italic"
+                    android:textStyle=""
                     android:layout_gravity="center"
                     android:paddingTop="15dp"
                     android:textAlignment="center"/>
@@ -149,7 +165,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 app:rippleColor="#0E0E0E" />
 
         </RelativeLayout>
