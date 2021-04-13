@@ -10,7 +10,7 @@
         android:id="@+id/bookMarksIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/baseline_bookmarks_black_24dp"
+        android:background="@drawable/baseline_bookmark_border_white_24dp"
         android:text=""
         android:textColor="@color/colorPrimary"
         android:textSize="9dp"
