@@ -37,6 +37,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = MainActivity.class.getSimpleName();
     @BindView(R.id.searchEventButton) Button searchEventButton;
     @BindView(R.id.bookMarkIcon) TextView bookMarkIcon;
+    @BindView(R.id.appNameTextView) TextView appNameTextView;
+    @BindView(R.id.appDescription) TextView appDescription;
+    @BindView(R.id.Gospel) TextView gospel;
+    @BindView(R.id.jazz) TextView jazz;
+    @BindView(R.id.hipHop) TextView hipHop;
+    @BindView(R.id.reggae) TextView reggae;
+    @BindView(R.id.rock) TextView rock;
+    @BindView(R.id.pop) TextView pop;
+    @BindView(R.id.rhythms) TextView rhythms;
+    @BindView(R.id.countryMusic) TextView countryMusic;
+    @BindView(R.id.collections) TextView collections;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -53,6 +64,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.blink_anim);
         bookMarkIcon.startAnimation(animation);
+
+        Animation fadeAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.top_animation);
+        gospel.startAnimation(fadeAnimation);
+        jazz.startAnimation(fadeAnimation);
+        hipHop.startAnimation(fadeAnimation);
+        reggae.startAnimation(fadeAnimation);
+        rock.startAnimation(fadeAnimation);
+        pop.startAnimation(fadeAnimation);
+        rhythms.startAnimation(fadeAnimation);
+        countryMusic.startAnimation(fadeAnimation);
+        collections.startAnimation(fadeAnimation);
 
 
         firebaseAuth = FirebaseAuth.getInstance();

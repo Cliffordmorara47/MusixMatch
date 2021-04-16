@@ -59,7 +59,6 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         assert getArguments() != null;
         mEvent = Parcels.unwrap(getArguments().getParcelable("event"));
     }
@@ -74,6 +73,17 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
         eventInfo.setOnClickListener(this);
         eventAddress.setOnClickListener(this);
         eventDetail.setOnClickListener(this);
+
+        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.rotate);
+        bookMarksIcon.startAnimation(animation);
+        Animation topAnim = AnimationUtils.loadAnimation(getContext(), R.anim.top_animation);
+        eventName.startAnimation(topAnim);
+        eventCategory.startAnimation(topAnim);
+        eventDescription.startAnimation(topAnim);
+        eventInfo.startAnimation(topAnim);
+        eventAddress.startAnimation(topAnim);
+        eventDetail.startAnimation(topAnim);
+
 
         bookmarkEventButton.setOnClickListener(this);
         bookMarksIcon.setOnClickListener(this);

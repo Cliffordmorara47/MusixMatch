@@ -33,7 +33,8 @@
             android:layout_height="180dp"
             android:id="@+id/eventImageView"
             android:src="@drawable/phones"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:background="@drawable/button_layout"/>
 
         <RelativeLayout
             android:layout_width="match_parent"

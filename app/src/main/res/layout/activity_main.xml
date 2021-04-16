@@ -198,7 +198,7 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
+        android:background="@drawable/button_layout"
         android:backgroundTint="@color/colorAccent"
         android:fontFamily="cursive"
         android:text="Find Events.."

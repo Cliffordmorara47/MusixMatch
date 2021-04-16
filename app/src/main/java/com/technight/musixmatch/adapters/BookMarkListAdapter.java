@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +29,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class BookMarkListAdapter extends RecyclerView.Adapter<BookMarkListAdapter.EventViewHolder> {
+    @BindView(R.id.bookmarkImageView) ImageView bookMarkImage;
+
     private List<Event> mEvents;
     private Context mContext;
 
@@ -53,6 +57,7 @@ public class BookMarkListAdapter extends RecyclerView.Adapter<BookMarkListAdapte
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+//        @BindView(R.id.bookmarkImageView) ImageView bookMarkImage;
         @BindView(R.id.eventNameView) TextView eventNameView;
         @BindView(R.id.eventCategoryView) TextView eventCategory;
         @BindView(R.id.eventCostView) TextView eventCostView;
