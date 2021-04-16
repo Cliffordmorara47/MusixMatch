@@ -1,4 +1,4 @@
-# MusixMatch
+rksman77# MusixMatch
 Is an android based app that allows a user to search for an event within a area.
 
 ## Application HomePage

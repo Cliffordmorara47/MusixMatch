@@ -12,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
@@ -43,8 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+//        getWindow().setFlags(WindowManager.LayoutParams.ANIMATION_CHANGED, WindowManager.LayoutParams.ANIMATION_CHANGED);
+
         searchEventButton.setOnClickListener(this);
         bookMarkIcon.setOnClickListener(this);
+
+        Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.blink_anim);
+        bookMarkIcon.startAnimation(animation);
 
 
         firebaseAuth = FirebaseAuth.getInstance();

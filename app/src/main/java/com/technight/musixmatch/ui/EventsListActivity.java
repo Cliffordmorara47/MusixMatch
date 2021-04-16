@@ -13,7 +13,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -42,6 +45,8 @@ public class EventsListActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
     @BindView(R.id.errorTextView) TextView errorTextView;
     @BindView(R.id.loadingTextView) TextView loadingTextView;
+    @BindView(R.id.imageView) ImageView imageView;
+
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private String recentAddress;
@@ -55,6 +60,9 @@ public class EventsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
         ButterKnife.bind(this);
+
+        Animation topAnim = AnimationUtils.loadAnimation(EventsListActivity.this, R.anim.blink_anim);
+        imageView.startAnimation(topAnim);
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
