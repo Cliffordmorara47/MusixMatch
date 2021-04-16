@@ -74,7 +74,7 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.rotate);
         bookMarksIcon.startAnimation(animation);
-        Animation topAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bottom_animation);
+        Animation topAnim = AnimationUtils.loadAnimation(getContext(), R.anim.blink_anim_two);
         eventName.startAnimation(topAnim);
         eventCategory.startAnimation(topAnim);
         eventDescription.startAnimation(topAnim);
