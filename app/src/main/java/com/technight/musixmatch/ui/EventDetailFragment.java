@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 import com.technight.musixmatch.Constants;
 import com.technight.musixmatch.R;
 import com.technight.musixmatch.models.Event;
@@ -76,7 +74,7 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.rotate);
         bookMarksIcon.startAnimation(animation);
-        Animation topAnim = AnimationUtils.loadAnimation(getContext(), R.anim.top_animation);
+        Animation topAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bottom_animation);
         eventName.startAnimation(topAnim);
         eventCategory.startAnimation(topAnim);
         eventDescription.startAnimation(topAnim);

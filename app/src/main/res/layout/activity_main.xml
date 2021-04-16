@@ -189,8 +189,8 @@
         android:layout_above="@id/searchEventButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:textFontWeight="4500"/>
+        android:layout_marginBottom="20dp"
+        android:textFontWeight="4500" />
 
     <Button
         android:id="@+id/searchEventButton"
@@ -206,6 +206,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:iconTint="#0F9EAF"
-        android:textFontWeight="3500"/>
+        android:textFontWeight="3500"
+        android:layout_marginBottom="5dp"/>
 
 </RelativeLayout>
