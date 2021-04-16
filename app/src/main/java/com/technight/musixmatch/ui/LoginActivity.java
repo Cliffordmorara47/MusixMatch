@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.passwordEdit) TextView passwordEdit;
     @BindView(R.id.loginButton) Button loginButton;
     @BindView(R.id.loadingTextView) TextView loadingTextView;
+    @BindView(R.id.logLock) ImageView logLock;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -44,6 +46,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginButton.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        Animation animation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.rotation);
+        logLock.startAnimation(animation);
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
