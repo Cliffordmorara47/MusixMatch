@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Animation bounceAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
         appNameTextView.startAnimation(bounceAnimation);
 
-        Animation fadeAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bottom_animation);
+        Animation fadeAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bottom_animation | R.anim.bounce_two);
 //        appNameTextView.startAnimation(bounceAnimation);
         gospel.startAnimation(fadeAnimation);
         jazz.startAnimation(fadeAnimation);
